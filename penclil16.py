@@ -8,6 +8,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import os
 import lxml
+import datetime
 
 # In[1]
 
@@ -61,6 +62,10 @@ else:
     email_val = 'send'
     result = 'Error'
     print(result)
+
+current_time = datetime.datetime.now()
+with open('home/ec2-user/pencil15/result.txt', mode='a') as file:
+    file.write(f'{current_time},{result}')
 
 
 import boto3
